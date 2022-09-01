@@ -14,7 +14,7 @@
     "connect": "^3.7.0",
     "connect-flash": "^0.1.1",
     "crypto-js": "^4.1.1",
-    "dotenv": "^16.0.1",
+    "dotenv": "^16.0.2",
     "express": "^4.18.1",
     "express-fileupload": "^1.4.0",
     "express-handlebars": "^6.0.6",
@@ -26,7 +26,7 @@
     "mysql2-promise": "^0.1.4",
     "passport": "^0.6.0",
     "passport-local": "^1.0.0",
-    "sequelize": "^6.21.3",
+    "sequelize": "^6.21.4",
     "timeago.js": "^4.0.2"
   },
   "devDependencies": {
