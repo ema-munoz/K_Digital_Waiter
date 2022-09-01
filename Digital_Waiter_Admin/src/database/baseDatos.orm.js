@@ -1,7 +1,7 @@
 const Sequelize = require('sequelize')
 const mysql = require('mysql2/promise')
 
-const dbName = process.env.DB_SCHEMAS || "fintech";
+const dbName = process.env.DB_SCHEMAS || "Digital_Waiter";
 
 mysql.createConnection({
   host: process.env.DB_HOST || "127.0.0.1",
@@ -10,18 +10,18 @@ mysql.createConnection({
   password: process.env.DB_PASSWORD || "",
 }).then(connection => {
   connection.query(`CREATE DATABASE IF NOT EXISTS ${dbName};`).then((res) => {
-    console.info("Base de datos creada o comprobada correctamente");
+    console.info("Base de datos ha sido creada o comprobada correctamente.");
   })
 })
 
-const UsuarioModelos = require('../modelos/usuario/usuario')
-const detalleRolUsuarioModelo = require('../modelos/usuario/detalleRolUsuario')
-const rolUsuarioModelo = require('../modelos/usuario/rolUsuario')
-const subRolUsuarioModelo = require('../modelos/usuario/subRolUsuario')
+const UserModels = require('../models/user/user')
+const detalleRolUserModelo = require('../models/user/detalleRolUser')
+const rolUserModelo = require('../models/user/rolUser')
+const subRolUserModelo = require('../models/user/subRolUser')
 
 //coneccion
 const sequelize = new Sequelize(
-  'fintech',
+  'Digital_Waiter',
   'root',
   '',
   {
@@ -49,26 +49,34 @@ sequelize.sync({ force: false })
     console.log("Tablas sincronizadas")
   })
 
-//usuario
-const usuarios = UsuarioModelos(sequelize, Sequelize)
-const detalleRolUsuario = detalleRolUsuarioModelo(sequelize, Sequelize)
-const rolUsuario = rolUsuarioModelo(sequelize, Sequelize)
-const subRolUsuario = subRolUsuarioModelo(sequelize, Sequelize)
+//user
+const users = UserModels(sequelize, Sequelize)
+const detalleRolUser = detalleRolUserModelo(sequelize, Sequelize)
+const rolUser = rolUserModelo(sequelize, Sequelize)
+const subRolUser = subRolUserModelo(sequelize, Sequelize)
 
 //Relaciones 
 //usuaruio
-usuarios.hasMany(detalleRolUsuario)
-detalleRolUsuario.belongsTo(usuarios)
+users.hasMany(detalleRolUser
+)
+detalleRolUser.belongsTo(users)
 
-rolUsuario.hasMany(detalleRolUsuario)
-detalleRolUsuario.belongsTo(rolUsuario)
+rolUser.hasMany(detalleRolUser
+)
+detalleRolUser.belongsTo(rolUser
+)
 
-subRolUsuario.hasMany(detalleRolUsuario)
-detalleRolUsuario.belongsTo(subRolUsuario)
+subRolUser.hasMany(detalleRolUser
+)
+detalleRolUser.belongsTo(subRolUser
+)
 
 module.exports = {
-  usuarios,
-  detalleRolUsuario,
-  rolUsuario,
-  subRolUsuario
+  users,
+  detalleRolUser
+,
+  rolUser
+,
+  subRolUser
+
 }
