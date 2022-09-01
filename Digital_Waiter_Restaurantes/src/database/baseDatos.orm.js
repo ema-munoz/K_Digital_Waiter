@@ -14,10 +14,10 @@ mysql.createConnection({
   })
 })
 
-const UsuarioModelos = require('../modelos/usuario/usuario')
-const detalleRolUsuarioModelo = require('../modelos/usuario/detalleRolUsuario')
-const rolUsuarioModelo = require('../modelos/usuario/rolUsuario')
-const subRolUsuarioModelo = require('../modelos/usuario/subRolUsuario')
+const UsuarioModelos = require('../models/usuario/usuario')
+const detalleRolUsuarioModelo = require('../models/usuario/detalleRolUsuario')
+const rolUsuarioModelo = require('../models/usuario/rolUsuario')
+const subRolUsuarioModelo = require('../models/usuario/subRolUsuario')
 
 //coneccion
 const sequelize = new Sequelize(
