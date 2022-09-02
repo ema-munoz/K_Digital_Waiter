@@ -1,30 +1,30 @@
 const indexCtrl = {};
-const pool = require("../configuracionBaseDatos/baseDatos.sql");
-const orm = require("../configuracionBaseDatos/baseDatos.orm");
+const pool = require("../database/database.sql");
+const orm = require("../database/database.orm");
 
-indexCtrl.mostrar = (req, res) => {
-  res.render("index");
+indexCtrl.show = (req, res) => {
+	res.render("index");
 };
 
-indexCtrl.mandar = async (req, res) => {
-  const { validar } = req.body;
-  const validacion = await orm.dueñoTienda.findOne({
-    where: { usernameDueñoTienda: validar },
-  });
-  if (validacion) {
-    const validaciones = validacion;
-    if (validaciones.usernameDueñoTienda !== null) {
-      res.redirect("/Login/" + validaciones.idUsuarios);
-    } else {
-      res.flash(
-        "success",
-        "no tiene un usuario con esa cuenta porfavor registrese"
-      );
-      res.redirect("/Registro");
-    }
-  } else {
-    res.redirect("/Registro");
-  }
+indexCtrl.send = async (req, res) => {
+	const { validate } = req.body;
+	const validation = await orm.user.findOne({
+		where: { usernameUsers: validate },
+	});
+	if (validation) {
+		const validations = validation;
+		if (validations.usernameUsers !== null) {
+			res.redirect("/Login/" + validations.idUsers);
+		} else {
+			res.flash(
+				"success",
+				"You do not have a user with that account please register."
+			);
+			res.redirect("/Register");
+		}
+	} else {
+		res.redirect("/Register");
+	}
 };
 
 module.exports = indexCtrl;
