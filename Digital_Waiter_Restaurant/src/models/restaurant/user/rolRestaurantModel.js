@@ -1,20 +1,18 @@
-const ubicationUser = (sequelize, type)=>{
-    return sequelize.define('ubicationUsers', {
-        idUbicationUser: {
+const rolRestaurants = (sequelize, type)=>{
+    return sequelize.define('rolRestaurants', {
+        idRolRestaurant: {
             type: type.INTEGER,
             primaryKey: true,
             autoIncrement: true
         },
-        mainstreetLocationUser: type.STRING,
-        streetSecondaryLocationUser: type.STRING,
-        referenceLocationUser: type.STRING,
-        HouseNumberLocationUser: type.STRING,
-        creationUbicationUsers: {
+        nameRolRestaurants: type.STRING,
+        stateRolRestaurants: type.STRING,
+        creationRolRestaurants: {
             type: "TIMESTAMP",
             defaultValue: type.literal("CURRENT_TIMESTAMP"),
             allowNull: false,
         },
-        updateUbicationUsers: {
+        updateRolRestaurants: {
             type: "TIMESTAMP",
             defaultValue: type.literal("CURRENT_TIMESTAMP "),
             allowNull: false,
@@ -26,4 +24,4 @@ const ubicationUser = (sequelize, type)=>{
 );
 };
 
-module.exports = ubicationUser;
+module.exports = rolRestaurants;

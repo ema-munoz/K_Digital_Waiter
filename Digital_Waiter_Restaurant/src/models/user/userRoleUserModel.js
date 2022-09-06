@@ -7,8 +7,6 @@ const userRoleUser = (sequelize, type) => {
 				primaryKey: true,
 				autoIncrement: true,
 			},
-			nameUserRoleUser: type.STRING,
-			stateUserRoleUser: type.STRING,
 			creationUserRoleUser: {
 				type: "TIMESTAMP",
 				defaultValue: type.literal("CURRENT_TIMESTAMP"),
