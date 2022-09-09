@@ -1,19 +1,16 @@
-const reserve = (sequelize, type)=>{
-    return sequelize.define('reserves', {
+ const detailReserve = (sequelize, type) =>{
+    return sequelize.define('detailReserve', {
         idReserve: {
             type: type.INTEGER,
             primaryKey: true,
-            autoIncrement: true
+            autoIncrement:true
         },
-        nameReserve: type.STRING,
-        descriptionReserve: type.STRING,
-        typeReserve: type.STRING,
-        creationReserve: {
+        creationDetailReserve: {
             type: "TIMESTAMP",
             defaultValue: type.literal("CURRENT_TIMESTAMP"),
             allowNull: false,
         },
-        updateReserve: {
+        updateDetailReserve: {
             type: "TIMESTAMP",
             defaultValue: type.literal("CURRENT_TIMESTAMP "),
             allowNull: false,
@@ -25,4 +22,4 @@ const reserve = (sequelize, type)=>{
     );
 };
 
-module.exports = reserve;
+module.exports = detailReserve;

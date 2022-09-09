@@ -1,4 +1,4 @@
-const ubicacionRestaurant = (sequelize, type)=>{
+const ubicacionRestaurant = (sequelize, type) => {
     return sequelize.define('ubicacionRestaurants', {
         idubicacionRestaurant: {
             type: type.INTEGER,
@@ -20,10 +20,10 @@ const ubicacionRestaurant = (sequelize, type)=>{
             allowNull: false,
         },
     },
-    {
-        timestamps: false,
-    }
-);
+        {
+            timestamps: false,
+        }
+    );
 };
 
 module.exports = ubicacionRestaurant;
