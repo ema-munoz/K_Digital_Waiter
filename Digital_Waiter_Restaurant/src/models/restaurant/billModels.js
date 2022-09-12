@@ -28,7 +28,4 @@ const bill = (sequelize, type) => {
 	);
 };
 
-module.exports = ingredients;
-
-
-    
+module.exports = bill;

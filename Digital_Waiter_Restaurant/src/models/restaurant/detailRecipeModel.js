@@ -1,20 +1,19 @@
-const workingHours = (sequelize, type) => {
-    return sequelize.define('workingHours', {
-        idWorkingHours: {
+const detailRecipe = (sequelize, type) => {
+    return sequelize.define('detailRecipe', {
+        idDetailRecipe: {
             type: type.INTEGER,
             primaryKey: true,
             autoIncrement: true
         },
-        scheduleWorkingHours: type.STRING,
-        dateWorkingHours: type.STRING,
-        startTimeWorkingHours: type.STRING,
-        finishTimeWorkingHours: type.STRING,
-        creationWorkingHours: {
+        nameRecipe: type.STRING,
+        amountRecipe: type.STRING,
+        descriptionRecipe: type.STRING,
+        creationDetailRecipe: {
             type: "TIMESTAMP",
             defaultValue: type.literal("CURRENT_TIMESTAMP"),
             allowNull: false,
         },
-        updateWorkingHours: {
+        updateDetailRecipe: {
             type: "TIMESTAMP",
             defaultValue: type.literal("CURRENT_TIMESTAMP "),
             allowNull: false,
@@ -26,4 +25,4 @@ const workingHours = (sequelize, type) => {
     );
 };
 
-module.exports = workingHours;
+module.exports = detailRecipe;
