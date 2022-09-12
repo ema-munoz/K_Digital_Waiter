@@ -119,7 +119,16 @@ const orderSupplier = orderSupplierModel(sequelize, Sequelize);
 const portions = portionsModel(sequelize, Sequelize);
 const promotions = promotionsModel(sequelize, Sequelize);
 const provider = providerModel(sequelize, Sequelize);
-
+const recipes = recipesModel(sequelize,Sequelize);
+const reservationDetails = reservationDetailsModel(sequelize, Sequelize);
+const reserve = reserveModel(sequelize, Sequelize);
+const restaurant = restaurantModel(sequelize, Sequelize);
+const saucer = saucerModel(sequelize, Sequelize);
+const workingHours = workingHoursModel(sequelize, Sequelize);
+const client = clientModel(sequelize, Sequelize);
+const customerLocation = customerLocationModel(sequelize, Sequelize);
+const customerOrderDetail = customerOrderDetailModel(sequelize, Sequelize);
+const customerOder = customerOderModel(sequelize, Sequelize);
 //restaurant
 
 //Relations
