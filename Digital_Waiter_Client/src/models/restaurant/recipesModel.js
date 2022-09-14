@@ -1,18 +1,21 @@
-const userRoleUser = (sequelize, type) => {
+const recipes = (sequelize, type) => {
 	return sequelize.define(
-		"userRoleUsers",
+		"recipes",
 		{
-			idUserRoleUser: {
+			idRecipes: {
 				type: type.INTEGER,
 				primaryKey: true,
 				autoIncrement: true,
 			},
-			creationUserRoleUser: {
+			nameRecipes: type.STRING,
+            descriptionRecipes: type.STRING,
+			imageRecipe: type.STRING,
+			creationRecipes: {
 				type: "TIMESTAMP",
 				defaultValue: type.literal("CURRENT_TIMESTAMP"),
 				allowNull: false,
 			},
-			aupdateUserRoleUser: {
+			updateRecipes: {
 				type: "TIMESTAMP",
 				defaultValue: type.literal("CURRENT_TIMESTAMP "),
 				allowNull: false,
@@ -24,4 +27,4 @@ const userRoleUser = (sequelize, type) => {
 	);
 };
 
-module.exports = userRoleUser;
+module.exports = recipes;

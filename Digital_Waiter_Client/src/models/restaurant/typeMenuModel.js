@@ -1,18 +1,20 @@
-const userRoleUser = (sequelize, type) => {
+const typeMenus = (sequelize, type) => {
 	return sequelize.define(
-		"userRoleUsers",
+		"typeMenus",
 		{
-			idUserRoleUser: {
+			idTypeMenu: {
 				type: type.INTEGER,
 				primaryKey: true,
 				autoIncrement: true,
 			},
-			creationUserRoleUser: {
+			nameTypeMenu: type.STRING,
+			stateTypeMenu: type.STRING,
+			creationTypeMenu: {
 				type: "TIMESTAMP",
 				defaultValue: type.literal("CURRENT_TIMESTAMP"),
 				allowNull: false,
 			},
-			aupdateUserRoleUser: {
+			updateTypeMenu: {
 				type: "TIMESTAMP",
 				defaultValue: type.literal("CURRENT_TIMESTAMP "),
 				allowNull: false,
@@ -24,4 +26,4 @@ const userRoleUser = (sequelize, type) => {
 	);
 };
 
-module.exports = userRoleUser;
+module.exports = typeMenus;

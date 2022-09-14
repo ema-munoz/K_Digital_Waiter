@@ -1,22 +1,19 @@
-const restaurant = (sequelize, type) => {
-    return sequelize.define('restaurants', {
-        idRestaurants: {
+const detailRecipe = (sequelize, type) => {
+    return sequelize.define('detailRecipe', {
+        idDetailRecipe: {
             type: type.INTEGER,
             primaryKey: true,
             autoIncrement: true
         },
-        rucRestaurants: type.STRING,
-        imageRestaurant: type.STRING,
-        nameRestaurant: type.STRING,
-        descriptionRestaurant: type.STRING,
-        cellphone: type.STRING,
-        phone: type.STRING,
-        creationRestaurants: {
+        nameRecipe: type.STRING,
+        amountRecipe: type.STRING,
+        descriptionRecipe: type.STRING,
+        creationDetailRecipe: {
             type: "TIMESTAMP",
             defaultValue: type.literal("CURRENT_TIMESTAMP"),
             allowNull: false,
         },
-        updateRestaurants: {
+        updateDetailRecipe: {
             type: "TIMESTAMP",
             defaultValue: type.literal("CURRENT_TIMESTAMP "),
             allowNull: false,
@@ -28,4 +25,4 @@ const restaurant = (sequelize, type) => {
     );
 };
 
-module.exports = restaurant;
+module.exports = detailRecipe;

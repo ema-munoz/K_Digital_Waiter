@@ -1,18 +1,20 @@
-const userRoleUser = (sequelize, type) => {
+const providers = (sequelize, type) => {
 	return sequelize.define(
-		"userRoleUsers",
+		"providers",
 		{
-			idUserRoleUser: {
+			idProviders: {
 				type: type.INTEGER,
 				primaryKey: true,
 				autoIncrement: true,
 			},
-			creationUserRoleUser: {
+			nameProviders: type.STRING,
+			cellphoneProviders: type.STRING,
+			creationProviders: {
 				type: "TIMESTAMP",
 				defaultValue: type.literal("CURRENT_TIMESTAMP"),
 				allowNull: false,
 			},
-			aupdateUserRoleUser: {
+			updateProviders: {
 				type: "TIMESTAMP",
 				defaultValue: type.literal("CURRENT_TIMESTAMP "),
 				allowNull: false,
@@ -24,4 +26,4 @@ const userRoleUser = (sequelize, type) => {
 	);
 };
 
-module.exports = userRoleUser;
+module.exports = providers;

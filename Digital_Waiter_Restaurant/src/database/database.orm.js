@@ -60,6 +60,7 @@ const clientModel = require('../models/client/clientModel');
 const customerLocationModel = require('../models/client/customerLocationModel');
 const customerOrderDetailModel = require('../models/client/customerOrderDetailModel');
 const customerOderModel = require('../models/client/customerOrderModel');
+const ubicacionRestaurant = require("../models/restaurant/ubicationRestaurant");
 //client
 
 // connection

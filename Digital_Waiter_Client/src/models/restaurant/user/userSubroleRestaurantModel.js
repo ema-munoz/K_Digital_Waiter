@@ -1,18 +1,18 @@
-const userRoleUser = (sequelize, type) => {
+const userSubroleRestaurants = (sequelize, type) => {
 	return sequelize.define(
-		"userRoleUsers",
+		"userSubroleRestaurants",
 		{
-			idUserRoleUser: {
+			idUserSubroleRestaurant: {
 				type: type.INTEGER,
 				primaryKey: true,
 				autoIncrement: true,
 			},
-			creationUserRoleUser: {
+			creationUserSubroleRestaurant: {
 				type: "TIMESTAMP",
 				defaultValue: type.literal("CURRENT_TIMESTAMP"),
 				allowNull: false,
 			},
-			aupdateUserRoleUser: {
+			updateUserSubroleRestaurant: {
 				type: "TIMESTAMP",
 				defaultValue: type.literal("CURRENT_TIMESTAMP "),
 				allowNull: false,
@@ -24,4 +24,4 @@ const userRoleUser = (sequelize, type) => {
 	);
 };
 
-module.exports = userRoleUser;
+module.exports = userSubroleRestaurants;

@@ -1,18 +1,21 @@
-const userRoleUser = (sequelize, type) => {
+const customerOrders = (sequelize, type) => {
 	return sequelize.define(
-		"userRoleUsers",
+		"customerOrders",
 		{
-			idUserRoleUser: {
+			idCustomerOrder: {
 				type: type.INTEGER,
 				primaryKey: true,
 				autoIncrement: true,
 			},
-			creationUserRoleUser: {
+			timeCustomerOrder: type.STRING,
+			dateCustomerOrder: type.STRING,
+			stateCustomerOrder: type.STRING,
+			creationCustomerOrder: {
 				type: "TIMESTAMP",
 				defaultValue: type.literal("CURRENT_TIMESTAMP"),
 				allowNull: false,
 			},
-			aupdateUserRoleUser: {
+			updateCustomerOrder: {
 				type: "TIMESTAMP",
 				defaultValue: type.literal("CURRENT_TIMESTAMP "),
 				allowNull: false,
@@ -24,4 +27,4 @@ const userRoleUser = (sequelize, type) => {
 	);
 };
 
-module.exports = userRoleUser;
+module.exports = customerOrders;
