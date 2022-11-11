@@ -1,5 +1,5 @@
 const restaurantPermits =(sequelize, type) => {
-    return sequelize.defiene(
+    return sequelize.define(
         "restaurantPermits",
         {
             idRestaurantPermits: {

@@ -4,16 +4,16 @@ const routes = express.Router();
 const {
 	showLogin,
 	showRegister,
-	register,
-	login,
+	Register,
+	Login,
 	closeSession,
 } = require("../controllers/register.controllers");
 
 routes.get("/Register", showRegister);
-routes.post("/Register", register);
+routes.post("/Register", Register);
 
 routes.get("/Login/:id", showLogin);
-routes.post("/Login/:id", login);
+routes.post("/Login/:id", Login);
 
 routes.get("/CloseSession", closeSession);
 

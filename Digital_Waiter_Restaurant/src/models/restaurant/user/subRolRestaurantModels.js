@@ -1,15 +1,15 @@
-const subRollRestaurant =(sequelize, type) => {
-    return sequelize.defiene(
-        "subRollRestaurants",
-        {
-            idSubRollRestaurant: {
-                type:type.INTEGER,
-                primaryKey: true,
-                autoIncrement: true,
-            },
-            nameSubRollRestaurant: type.STRING,
-            StatusSubRolRestaurant: type.STRING,
-            creationSubRollRestaurant: {
+const subRollRestaurant = (sequelize, type) => {
+	return sequelize.define(
+		"subRollRestaurants",
+		{
+			idSubRollRestaurant: {
+				type: type.INTEGER,
+				primaryKey: true,
+				autoIncrement: true,
+			},
+			nameSubRollRestaurant: type.STRING,
+			StatusSubRolRestaurant: type.STRING,
+			creationSubRollRestaurant: {
 				type: "TIMESTAMP",
 				defaultValue: type.literal("CURRENT_TIMESTAMP"),
 				allowNull: false,
@@ -26,7 +26,3 @@ const subRollRestaurant =(sequelize, type) => {
 	);
 };
 module.exports = subRollRestaurant;
-
-
-    
-

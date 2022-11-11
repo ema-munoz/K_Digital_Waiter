@@ -1,5 +1,5 @@
 const Saucer = (sequelize, type) => {
-    return sequelize,define(
+    return sequelize.define(
         "saucer",
         {
             idSaucer: {

@@ -1,16 +1,16 @@
-const tableType =(sequelize, type) => {
-    return sequelize.defiene(
-        "tableType",
-        {
-            idTableType: {
-                type:type.INTEGER,
-                primaryKey: true,
-                autoIncrement: true,
-            },
-           
-            nameTableType:  type.STRING,
-            descriptionTableType: type.STRING,
-            creationTableType: {
+const tableType = (sequelize, type) => {
+	return sequelize.define(
+		"tableType",
+		{
+			idTableType: {
+				type: type.INTEGER,
+				primaryKey: true,
+				autoIncrement: true,
+			},
+
+			nameTableType: type.STRING,
+			descriptionTableType: type.STRING,
+			creationTableType: {
 				type: "TIMESTAMP",
 				defaultValue: type.literal("CURRENT_TIMESTAMP"),
 				allowNull: false,
@@ -27,4 +27,3 @@ const tableType =(sequelize, type) => {
 	);
 };
 module.exports = tableType;
-
